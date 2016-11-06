@@ -1,16 +1,8 @@
 /* testing number 600851475143 */
-function greatestPrimeFactor(num) {
-	var numArr = [];
-	var end = Math.sqrt(num);
-	for (var i = 2; i <= end; i++) {
-		if (num % i === 0) {
-			numArr.push(i);
-			end = num / i;
-			numArr.push(end);
-		}
-	}
-	return numArr.filter(n => isPrime(n)).sort((a, b) => b - a)[0];
+/* Solution: 6857 */
 
+function greatestPrimeFactor(num) {
+	
 	function isPrime(n) {
 		var prime = (n === 1) ? false : true;
 		for (var i = 2; i <= Math.sqrt(n); i++) {
@@ -18,4 +10,16 @@ function greatestPrimeFactor(num) {
 		}
 		return prime;
 	}
+	
+	var numArr = [];
+	var lastNum = Math.sqrt(num);
+	for (var j = 2; j <= lastNum; j++) {
+		if (num % j === 0) {
+			numArr.push(j);
+			lastNum = num / j;
+			numArr.push(lastNum);
+		}
+	}
+	return numArr.filter(n => isPrime(n))
+		.sort((a, b) => b - a)[0];
 }
