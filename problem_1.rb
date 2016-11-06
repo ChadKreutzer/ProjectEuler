@@ -3,11 +3,9 @@
 
 def multiples_of_3_and_5 number
   sum = 0
-  i = 0
-
-  while i < number
+  
+  (0...number).each do |i|
     if i % 3 == 0 || i % 5 == 0 then sum += i end
-    i += 1
   end
   sum
 end

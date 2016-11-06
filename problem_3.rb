@@ -5,24 +5,20 @@ def greatest_prime(num)
   
   def is_prime?(n)
     prime = n == 1 ? false : true
-    i = 2
-    while i < n**0.5 do
+    (2...n**0.5).each do |i|
       if n % i == 0 then prime = false end
-      i += 1
     end
     prime
   end
   
   num_arr = []
   last_num = num**0.5
-  j = 2
-  while j < last_num do
+  (2...last_num).each do |j|
     if num % j == 0
       num_arr.push(j)
       last_num = num / j
       num_arr.push(last_num)
     end
-    j += 1
   end
   
   num_arr.select { |item| is_prime?(item) }.sort.last
