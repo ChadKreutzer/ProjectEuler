@@ -2,11 +2,8 @@
 # Solution: 4613732
 
 def sum_even_fibs number
-  sum = 0
-  temp = 0
-  start = 1
-  next_fib = 2
-
+  sum, temp, start, next_fib = 0, 0, 1, 2
+  
   while next_fib < number
     if next_fib % 2 == 0 then sum += next_fib end
     temp = next_fib
