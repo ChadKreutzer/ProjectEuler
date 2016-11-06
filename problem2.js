@@ -1,4 +1,6 @@
 /* Sum of even Fibonacci numbers below 4,000,000 */
+/* Solution: 4613732 */
+
 function sumEvenFibs(num) {
 	var sum = 0,
 		temp = 0,
@@ -11,5 +13,8 @@ function sumEvenFibs(num) {
 		next = start + next;
 		start = temp;
 	}
+	
 	return sum;
 }
+
+console.log(sumEvenFibs(4000000));

@@ -20,6 +20,9 @@ function greatestPrimeFactor(num) {
 			numArr.push(lastNum);
 		}
 	}
+	
 	return numArr.filter(n => isPrime(n))
 		.sort((a, b) => b - a)[0];
 }
+
+console.log(greatestPrimeFactor(600851475143));

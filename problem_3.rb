@@ -7,9 +7,7 @@ def greatest_prime(num)
     prime = n == 1 ? false : true
     i = 2
     while i < n**0.5 do
-      if n % i == 0
-        prime = false
-      end
+      if n % i == 0 then prime = false end
       i += 1
     end
     prime
@@ -27,10 +25,7 @@ def greatest_prime(num)
     j += 1
   end
   
-  num_arr.select do |item|
-    is_prime?(item)
-  end.sort.last
-  
+  num_arr.select { |item| is_prime?(item) }.sort.last
 end
 
 puts greatest_prime(600851475143)
