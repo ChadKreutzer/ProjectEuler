@@ -10,7 +10,6 @@ function sumEvenFibs(num) {
 		temp = next;
 		next = start + next;
 		start = temp;
-		console.log(sum);
 	}
 	return sum;
 }
