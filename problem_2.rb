@@ -1,16 +1,17 @@
 # /* Sum of even Fibonacci numbers below 4,000,000 */
 # Solution: 4613732
 
-def sum_even_fibs number
-  sum, temp, start, next_fib = 0, 0, 1, 2
-  
+def sum_even_fibs(number)
+  sum = 0
+  start = 1
+  next_fib = 2
+
   while next_fib < number
-    if next_fib % 2 == 0 then sum += next_fib end
+    sum += next_fib if next_fib.even?
     temp = next_fib
     next_fib = start + next_fib
     start = temp
   end
-
   sum
 end
 
